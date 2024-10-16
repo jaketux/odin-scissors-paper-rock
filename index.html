@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+            function getHumanChoice(){
+                let humanChoice = prompt("What is your choice, Scissors, Paper or Rock?")
+                return humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase();
+            }
+
+            function getComputerChoice(){
+                let computerOptions = ["Scissors","Paper","Rock"]
+                let randomNumber = Math.floor((Math.random()*3))
+                let computerChoice = computerOptions[randomNumber]
+                return computerChoice
+            }     
+
+            function playGame() {
+
+                let humanScore = 0
+                let computerScore = 0
+            
+                function playRound(humanSelection,computerSelection) {
+                    if (computerSelection === humanSelection) {
+                        alert("It's a draw! You both had " + humanSelection+ ". Your score: "+humanScore+". Computer score: "+computerScore+".")
+                    }   
+                    else if (humanSelection === "Scissors" && computerSelection === "Paper") {
+                        humanScore++; alert("You win! " + humanSelection + " beats " + computerSelection + ". Your score: "+humanScore+". Computer score: "+computerScore+"."); 
+                    } else if (humanSelection === "Paper" && computerSelection === "Rock") {
+                        humanScore++; alert("You win! " + humanSelection + " beats " + computerSelection + ". Your score: "+humanScore+". Computer score: "+computerScore+".")
+                    } else if (humanSelection === "Rock" && computerSelection === "Scissors") {
+                        humanScore++; alert("You win! " + humanSelection + " beats " + computerSelection + ". Your score: "+humanScore+". Computer score: "+computerScore+".")
+                    } else {
+                        computerScore++; alert("You lose! " + computerSelection + " beats " + humanSelection + ". Your score: "+humanScore+". Computer score: "+computerScore+".") 
+                    }
+                }
+
+                for (let i = 0; i < 5; i++) {
+                    const humanSelection = getHumanChoice();
+                    const computerSelection = getComputerChoice();
+                    playRound(humanSelection,computerSelection)
+                }
+         
+            }
+
+            playGame();      
+
+
+    </script>
+</body>
+</html>
