@@ -1,0 +1,59 @@
+button {
+    margin-bottom:30px
+}
+
+.human,.computer{
+    display:inline-block;
+}
+
+.header{font-size:48px;
+font-weight:700;
+}
+
+.subtext, .human, .computer, .outcometext{font-size:20px;
+font-weight:300;
+text-align:center;
+}
+
+div{display:inline-block;}
+
+#scissors-btn, #paper-btn, #rock-btn{
+    height:200px;
+    width:200px;
+    border:1px solid black;
+}
+
+#scissors-btn{
+    background:url(./images/scissors.jpg) no-repeat;
+    background-size:contain;
+}
+
+#rock-btn{
+    background:url(./images/rock.jpg) no-repeat;
+    background-size:contain;
+}
+
+#paper-btn{
+    background:url(./images/paper.jpg) no-repeat;
+    background-size:contain;
+}
+
+#reset-btn{
+    padding:10px 30px 10px 30px;
+}
+
+body{display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+@media only screen and (max-width: 450px) {
+    
+    .header{font-size:36px;
+    text-align:center;}
+    #scissors-btn, #paper-btn, #rock-btn {
+      height:100px;
+      width:100px;
+    }
+  }
